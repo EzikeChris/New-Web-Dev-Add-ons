@@ -1,0 +1,64 @@
+///COMPARISON OPERATORS///
+
+// GOOD EXAMPLE OF USING BOOLEANS IS WITH COMPARISON OPERATORS //
+
+/// LETS ASSUME X=5 /// WHERE YOUR SEE X ITS ASSUMED TO BE 5///
+
+
+// OPERATORS //
+
+
+> GREATER THAN >
+   X > 10 False
+
+>= GREATER THAN OR EQUAL TO >=
+           X>=5  True
+< LESS THAN <
+    x<-50 
+
+/// LOGICAL OPERATORS ///
+
+// OPERATORS ///
+&&
+||
+!
+/// OPERATORS ////
+
+///&&///
+Requires both side to be true EXAMPLE
+      x<10&&x!==5 False
+
+//// || ///
+Require only one side to be true
+y>9 || x===5 True 
+
+
+
+/// ! /////
+
+ ! bang (not) Nigeates the whole valuataion, it chooses the opposite
+
+
+//// CONDITIONALS ////
+
+///THREE MAJOR KEYWORDS WHICH ARE SPECIFIC TO JAVASCRIPT//
+
+///IF////
+
+
+
+
+
+
+
+
+///ELSE IF///
+
+
+
+
+
+
+
+
+////ELSE///

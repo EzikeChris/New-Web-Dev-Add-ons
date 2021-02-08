@@ -1,0 +1,119 @@
+// 5 Reference data types in javascript
+
+// objects
+
+
+
+
+// Arrays 
+
+
+
+
+// Functions 
+
+
+
+
+//maps
+
+
+
+//sets
+
+
+
+
+
+
+// 5 primitive data types in javascript//
+
+
+//  NUMBERS
+
+4
+9.3
+-10
+
+// Modulo- Remainder Operator
+
+10 % 3 
+// its goes three times remainder 1
+
+//STRINGS
+
+"HELLO WORLD"
+"20003"
+"2020"
+"22"
+
+
+// String Concatenation 
+
+"hi " + " GoodBye"
+
+// Backslash//
+
+
+/* 
+  it simply means you want double qoutes or qoutes
+  within your string
+  
+  E.g "she said \"goodbye!\" "
+
+
+*/
+
+
+//
+
+
+
+
+
+// BOOLEANS
+
+True
+False
+
+// Null 
+
+
+
+
+
+
+//Undefined
+
+
+
+
+
+
+
+
+
+
+
+/// jAVASCRIPT VARIABLES ///
+
+var name = "rusty";
+ASSIGNED THE NAME TO RUSTY
+
+// with var and let variables can be changed or reassigned 
+
+// unlike const
+
+// Reassgined variable
+
+name = "chris";
+
+/// JAVASCRIPT IS A DYNAMICALLY TYPED LANGUAGE WHICH MEANS IT CAN BE CHANGE FROM ONE DATA TYPE TO NUMBER///
+
+
+// DYNAMIC TYPING IN JAVASCRIPT MEANS IT CAN CHANGE FROM ONE TYPE TO ANOTHER///
+
+
+// CAMEL CASE
+
+yourNameGroupies
