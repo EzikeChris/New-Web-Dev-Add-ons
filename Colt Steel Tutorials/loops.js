@@ -144,7 +144,33 @@ for (var i = 300; i <= 333; i++) {
 }
 
 
+// Loops essentially help us to loop over data //
+
+// FOR LOOPS ESSENTIALLY HAS THREE PARTS //
+
+/*
+
+COUNTER 
+
+CONDITION
+
+ITERATION-EXPRESSION
 
 
+*/
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+for (let i = 10; i > 0; i--) {
+    console.log(i);
+}
+
+var numbers = [1,2,3,4,5,6,7,8,9,10]
+for (let i = 0; i < numbers.length; i++) {
+    if(numbers% 3 === 0) {
+        console.log(numbers);
+    }
+}
 
 

@@ -102,6 +102,13 @@ let iceCreamFlavors = ["Chocolate", "Strawberry", "Vanilla", "Pistachio", "Rocky
 for (let i = 0; i < iceCreamFlavors.length; i++) {
   console.log(iceCreamFlavors[i]);
 } //Ends when all flavors are printed
+
+
+
+/// FOREACH // ARRAY ITERATION ALSO INCLUDE MAP, FOR-OF ////
+iceCreamFlavors.forEach(function(icecream)) {
+    console.log(icream);
+}
 ```
 
 ✅ Experiment with looping over an array of your own making in your browser's console. 
