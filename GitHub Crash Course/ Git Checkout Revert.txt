@@ -1,0 +1,53 @@
+////// GIT LOG /////
+
+////DISPLAYS A LOG HISTORY OF YOUR COMMIT FROM DAY ONE THE FIRST EVER COMMIT////
+
+
+
+/// GIT Q //// 
+
+// THIS WOULD CLEAR THE GIT LOG HISTORY AND RETURN YOU TO YOUR CURRENT STATUS///
+
+
+
+
+///// GIT CHECKOUT////
+
+
+USED FOR CHECKING SOMETHING OUT EG A PREVIOUS COMMIT OT BRANCH
+CHECKOUT CAN BE USED FOR CHANGING BRANCHES
+ 
+ E.G git checkout 28374467382jkneye7838
+
+
+ from this git would check out HEAD FROM THE ABOVE HASH......
+
+ THIS WOULD SEND YOU BACK IN TIME TO THE PREVIOUS COMMIT AND RUNNING LS WOULD PLACE YOU AT THE OLD FILE.
+
+HEAD(This is git checkout, this means head has been detached from master meaning your back in the past to examine some previous code and the back to master thus chnaging head to master)
+  0=>0=>0=>0=>0=>0MASTER(while this is the future you)
+
+T0 head back to master after review of the code
+
+RUN CODE //////
+
+git checkout master(YOUR BACK TO WHERE YOU LEFT OFF)
+
+
+//// GIT REVERT /////// HOW TO REVERT TO AN OLD COMMIT
+
+
+////MAINLY USED TO REVERT CODE STARTING OVER FROM THE PAST///
+/// UNDOING SOMETHING DELETING CHANGES OR COMPLETELY SCRAPPING UP YOUR WORK AND START FROM HTML CSS ETC///
+
+RUN COMMAND///
+ git revert --no-commit 0987484c345...HEAD 
+
+
+ 
+
+
+
+
+
+
