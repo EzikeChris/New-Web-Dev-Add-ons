@@ -1,0 +1,164 @@
+This brief tutorial shows students and new users how to install MongoDB database server on Ubuntu 20.04 | 18.04.
+
+MongoDB, a free open source, NoSQL High-performance, schema-free document-oriented database can be used to create powerful websites and applications.
+
+MongoDB is already in Ubuntu default repositories, however, the version in Ubuntu repositories isn’t the latest and greatest.
+
+In order to install the latest, you must install MongoDB package repository on Ubuntu, and this tutorial will show you how.
+
+When you’re ready to get MongoDB installed, follow the steps below:
+
+Step 1: Add MongoDB Package repository to Ubuntu
+In order to get the latest version of MongoDB, you must add its repository to Ubuntu.. to do that, run the commands below to add the official repository key.
+
+wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+
+
+
+NEXT================>
+
+After adding the repository key to Ubuntu, run the commands below to add MongoDB repository to your system…
+
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+
+
+
+
+Step 2: Install MongoDB on Ubuntu 18.04
+Now that the repository and key have been added to Ubuntu, run the commands below to install the package.
+
+sudo apt update
+sudo apt install mongodb-org
+
+
+
+Step 3: Manage MongoDB
+After installing MongoDB, the commands below can be used to stop, start and enable MongoDB to automatically startup when the systems boots up.
+
+sudo systemctl stop mongod.service
+sudo systemctl start mongod.service
+sudo systemctl enable mongod.service
+By default, MongoDB listens on port 27017.. after installing, the local server should be able to communicate with MongoDB.. to verify whether MongoDB is running and active, run the commands below:
+
+sudo systemctl status mongod
+
+You should see something like the lines below:
+
+mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor preset: enabled)
+     Active: active (running) since Thu 2020-05-21 12:37:32 CDT; 52s ago
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 3409 (mongod)
+     Memory: 72.7M
+     CGroup: /system.slice/mongod.service
+             └─3409 /usr/bin/mongod --config /etc/mongod.conf
+
+May 21 12:37:32 ubuntu2004 systemd[1]: Started MongoDB Database Server.
+
+
+CONNECT TO MONGO SHELL VERY FUNDAMENTAL =======>
+
+To connect to MongoDB shell, run the commands below:
+
+mongo --host 127.0.0.1:27017
+
+You should see something like the lines below:
+
+MongoDB shell version v4.2.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("1b88c27f-e477-4a29-b562-835ee56591b5") }
+MongoDB server version: 4.2.6
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+
+
+Step 4: Adding Admin User
+By default, authentication is not enabled for MongoDB users. In production environment, it may be required to secure your server and enable user authentication.
+
+Use the steps below to do that.
+
+If you want to enable authentication, run the commands to create a new admin user after you’ve logged into MongoDB server.
+
+> use admin
+
+Then run the commands below to create a new admin user
+
+> db.createUser({user:"admin", pwd:"new_password_here", roles:[{role:"root", db:"admin"}]})
+
+You should see a successful admin user created
+
+Successfully added user: {
+	"user" : "admin",
+	"roles" : [
+		{
+			"role" : "root",
+			"db" : "admin"
+		}
+	]
+}
+Exit and continue below to enable MongoDB logon authentication.
+
+Run the commands below to open MongoDB config file..
+
+sudo nano /lib/systemd/system/mongod.service
+Then change the highlighted line to look like the one below and save…
+
+[Unit]
+Description=High-performance, schema-free document-oriented database
+After=network.target
+Documentation=https://docs.mongodb.org/manual
+
+[Service]
+User=mongodb
+Group=mongodb
+ExecStart=/usr/bin/mongod --auth --config /etc/mongod.conf
+PIDFile=/var/run/mongodb/mongod.pid
+# file size
+Save and exit
+
+Restart MongDB to make the changes apply.
+
+sudo systemctl daemon-reload
+sudo service mongod restart
+After installing MongoDB, its default configuration file is located at /etc/mongod.conf.
+
+It is recommended to enable authentication since all users can access the database without authenticating.
+
+To do that, open the configuration file by running the commands below:
+
+sudo nano /etc/mongod.conf
+Then edit the line shown below to enabled:
+
+security:
+  authorization: enabled
+Restart MongoDB services after making the changes above.
+
+sudo service mongod restart
+Now only authentication users will be allowed to access the database server.
+
+mongo -u admin -p new_password_here --authenticationDatabase admin
+Run the commands below to verify that authentication is enabled.
+
+mongo -u admin -p --authenticationDatabase admin
+You should then be prompted for a password.
+
+
+Step 5: Completely Remove MongoDB
+To completely remove MongoDB from a system, you must remove the MongoDB applications themselves, the configuration files, and any directories containing data and logs.
+
+Stop the database server
+
+sudo systemctl stop mongod.service
+
+Remove all packages
+
+sudo apt purge mongodb-org*
+
+Finally, remove MongoDB databases and log files.
+
+sudo rm -r /var/log/mongodb
+sudo rm -r /var/lib/mongodb
+That’s it!
+
+
+

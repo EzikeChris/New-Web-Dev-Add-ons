@@ -8,6 +8,9 @@
 
 //// THE FIRST BIG O notation /////
 
+
+
+
 ///Linear Time///// or O of n O(n)
 
 // O(n) the number of inputs and the time it takes the computer to carryout those inputs///
