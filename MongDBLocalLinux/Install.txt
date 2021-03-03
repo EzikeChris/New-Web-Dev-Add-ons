@@ -15,6 +15,9 @@ wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add 
 
 
 
+
+
+
 NEXT================>
 
 After adding the repository key to Ubuntu, run the commands below to add MongoDB repository to your system…
@@ -26,6 +29,7 @@ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongod
 
 Step 2: Install MongoDB on Ubuntu 18.04
 Now that the repository and key have been added to Ubuntu, run the commands below to install the package.
+
 
 sudo apt update
 sudo apt install mongodb-org
