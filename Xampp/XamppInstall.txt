@@ -1,0 +1,7 @@
+Step 4. Launch XAMPP From Terminal
+XAMPP doesn’t have any desktop files, therefore, you need to launch from the terminal. However, starting XAMPP from the terminal is not that tough either. Simply run the following command.
+
+Type the ‘Open’ command to run the XAMPP installer. change the directory to lampp.
+
+$ cd /opt/lampp
+$ sudo ./manager-linux-x64.run ↵ (press enter)
