@@ -5,7 +5,7 @@ efficient?
 SIMPLE TALKS ABOUT A SOLUTION TO A PROBLEM AND WHAT METHODS BEST WOULD SOLVE THAT PROBLEMS
 A SYSTEM FOR COMPARING CODE AND CHOOSING THE BEST SOLUTION FOR SOLVING A PROBLEM WITH CODERS
 
-
+ 
 function addUpTo(n){
    let total = 0;
     for(let i = 1; i <= n; i++){
@@ -13,3 +13,4 @@ function addUpTo(n){
     }
     return total;
 }
+console.log(addUpTo(3))

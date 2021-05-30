@@ -1,0 +1,5 @@
+.....BIG 0 NOTATION......
+
+LINEAR TIME 0(n)
+what is or how long does it take for a code to run based on the number of input or operations it must carryout
+///The higher the input the higher the operation///
